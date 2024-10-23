@@ -1,20 +1,31 @@
 import "./navbar.css"
 import CartWidget from "./CartWidget"
 import brandlogo from "../../assets/brandlogo.png"
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <nav className="navbar">
-      <div className="brand">
-        <h1>ElectroHogar</h1>
-        <img src={brandlogo} alt="" />
-      </div>
+
+      <Link to="/" className="brand" >        
+          <p className="title-brand">ElectroHogar</p>
+          <img className="icon-brand" src={brandlogo} alt="" />
+      </Link>
 
       <ul className="listadocateg">
-        <li>Moviles</li>
-        <li>TV & Audio</li>
-        <li>Electrodomesticos</li>
-        <li>Computacion</li>
+
+        <li>          
+          <Link to= "/category/celulares" >Celulares</Link>
+        </li>
+        <li>          
+          <Link to= "/category/televisores" >Televisores</Link>
+        </li>
+        <li>          
+          <Link to= "/category/electrodomesticos" >Electrodomesticos</Link>
+        </li>
+        <li>          
+          <Link to= "/category/computacion" >Computacion</Link>
+        </li>
       </ul>
 
       <CartWidget />
